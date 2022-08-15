@@ -100,7 +100,7 @@ end, cfg.weight})
 
 -- Discord log system
 function Log(besked)
-	local connect = {
+	local embeds = {
 		  {
 			  ["color"] = "8663711",
 			  ["title"] = "Mysterybox",
@@ -110,5 +110,5 @@ function Log(besked)
 			},
 	  	}
 	}
-	PerformHttpRequest(cfg.webhook, function(err, text, headers) end, 'POST', json.encode({username = cfg.discordname, embeds = connect, avatar_url = cfg.image}), { ['Content-Type'] = 'application/json' })
+	PerformHttpRequest(cfg.webhook, function(err, text, headers) end, 'POST', json.encode({username = cfg.discordname, embeds = embeds, avatar_url = cfg.image}), { ['Content-Type'] = 'application/json' })
 end
